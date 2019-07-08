@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>StackedWidget</class>
- <widget class="QStackedWidget" name="StackedWidget">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,129 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>StackedWidget</string>
+   <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="page_login">
-   <widget class="QLabel" name="label_api_secret">
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_high">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>480</y>
-      <width>200</width>
-      <height>100</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>API SECRET</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_api_key">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>330</y>
-      <width>400</width>
-      <height>100</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_api_secret">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>480</y>
-      <width>400</width>
-      <height>100</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Button_login">
-    <property name="geometry">
-     <rect>
-      <x>910</x>
-      <y>330</y>
-      <width>200</width>
-      <height>250</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>확인</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_login">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>180</y>
-      <width>900</width>
-      <height>130</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>25</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-      <underline>false</underline>
-      <strikeout>false</strikeout>
-      <stylestrategy>PreferDefault</stylestrategy>
-      <kerning>true</kerning>
-     </font>
-    </property>
-    <property name="mouseTracking">
-     <bool>false</bool>
-    </property>
-    <property name="tabletTracking">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string>Login</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_api_key">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>330</y>
-      <width>200</width>
-      <height>100</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>API KEY</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QWidget" name="main_page">
-   <widget class="QLabel" name="label_open_price">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>90</y>
-      <width>400</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>.</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_open">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>90</y>
+      <x>120</x>
+      <y>260</y>
       <width>250</width>
       <height>70</height>
      </rect>
@@ -146,34 +31,14 @@
      </font>
     </property>
     <property name="text">
-     <string>시가    : </string>
+     <string>고가    : </string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_low_price">
+   <widget class="QLabel" name="label_high_price">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>390</y>
-      <width>400</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>.</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_volume_qty">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>490</y>
+      <x>420</x>
+      <y>260</y>
       <width>400</width>
       <height>70</height>
      </rect>
@@ -192,8 +57,8 @@
    <widget class="QLabel" name="label_close">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>190</y>
+      <x>120</x>
+      <y>160</y>
       <width>250</width>
       <height>70</height>
      </rect>
@@ -209,11 +74,71 @@
      <string>종가    : </string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_high_price">
+   <widget class="QLabel" name="label_time">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>290</y>
+      <x>120</x>
+      <y>560</y>
+      <width>250</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>시간    :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_close_price">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>160</y>
+      <width>400</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>.</string>
+    </property>
+   </widget>
+   <widget class="QDateTimeEdit" name="dateTimeEdit">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>560</y>
+      <width>400</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="dateTime">
+     <datetime>
+      <hour>0</hour>
+      <minute>0</minute>
+      <second>0</second>
+      <year>1999</year>
+      <month>1</month>
+      <day>1</day>
+     </datetime>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_open_price">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>60</y>
       <width>400</width>
       <height>70</height>
      </rect>
@@ -232,8 +157,8 @@
    <widget class="QLabel" name="label_low">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>390</y>
+      <x>120</x>
+      <y>360</y>
       <width>250</width>
       <height>70</height>
      </rect>
@@ -249,11 +174,11 @@
      <string>저가    :</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_high">
+   <widget class="QLabel" name="label_open">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>290</y>
+      <x>120</x>
+      <y>60</y>
       <width>250</width>
       <height>70</height>
      </rect>
@@ -266,74 +191,14 @@
      </font>
     </property>
     <property name="text">
-     <string>고가    : </string>
+     <string>시가    : </string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_volume">
+   <widget class="QLabel" name="label_low_price">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>490</y>
-      <width>250</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>거래량 :</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_time">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>590</y>
-      <width>250</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>시간    :</string>
-    </property>
-   </widget>
-   <widget class="QDateTimeEdit" name="dateTimeEdit">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>590</y>
-      <width>400</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="dateTime">
-     <datetime>
-      <hour>0</hour>
-      <minute>0</minute>
-      <second>0</second>
-      <year>1999</year>
-      <month>1</month>
-      <day>1</day>
-     </datetime>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_close_price">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>190</y>
+      <x>420</x>
+      <y>360</y>
       <width>400</width>
       <height>70</height>
      </rect>
@@ -349,7 +214,71 @@
      <string>.</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_volume">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>460</y>
+      <width>250</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>거래량 :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_volume_qty">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>460</y>
+      <width>400</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>.</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_login">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>80</y>
+      <width>187</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
   </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1300</width>
+     <height>47</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
