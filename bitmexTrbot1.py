@@ -6,7 +6,7 @@ import os, sys
 
 from mainDialog import *
 
-API_KEY, API_SECRET, BASE_URL = MyWindow.pushButtonClicked()
+API_KEY, API_SECRET, BASE_URL = MyWindow.pushButtonClicked(MyWindow)
 
 
 print(API_KEY, API_SECRET, BASE_URL)
