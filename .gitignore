@@ -1,0 +1,9 @@
+.idea
+trading.conf
+build/
+dist/
+venv/
+__pycache__/
+*.spec
+MyTutorExer.ui
+user.log
