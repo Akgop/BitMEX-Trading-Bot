@@ -5,7 +5,7 @@ from configparser import ConfigParser
 
 myconfig = ConfigParser()
 
-if not myconfig.read('trading.conf'):
+if not myconfig.read('trading_example.conf'):
     print('There is not configurations file')
     raise SystemExit
 

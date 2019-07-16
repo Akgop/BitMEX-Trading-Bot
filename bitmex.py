@@ -46,11 +46,25 @@ class BitMEX(object):
     #
     # Public methods
     #
-    def instruments(self, filter=None):
-        query = {}
-        if filter is not None:
-            query['filter'] = json.dumps(filter)
-        return self._curl_bitmex(path='instrument', query=query, verb='GET')
+    #def instruments(self, filter=None):
+    #    query = {}
+    #    if filter is not None:
+    #        query['filter'] = json.dumps(filter)
+    #    return self._curl_bitmex(path='instrument', query=query, verb='GET')
+
+    def instruments(self, count, reverse, start_time = None):
+        """https://testnet.bitmex.com/api/v1/instrument?symbol=XBt&count=1&reverse=false"""
+        postdict = {
+            'symbol' : self.symbol,
+            'count'  : count,
+            'reverse' : reverse,
+            'start_time' : start_time
+        }
+        return self._curl_bitmex(path= 'instrument', postdict= postdict, verb='GET')
+
+    def positions(self):
+        """https://testnet.bitmex.com/api/v1/position"""
+        return self._curl_bitmex(path= 'position', verb='GET')
 
     #
     # Authentication required methods
@@ -84,7 +98,15 @@ class BitMEX(object):
         }
         return self._curl_bitmex(path=path, postdict=postdict, verb='GET')
 
-
+    def order(self, count, reverse):
+        #https://testnet.bitmex.com/api/v1/order?symbol=XBt&count=2&reverse=true
+        path = 'order'
+        postdict = {
+            'symbol' : self.symbol,
+            'count' : count,
+            'reverse' : reverse
+        }
+        return self._curl_bitmex(path=path, postdict=postdict, verb='GET')
 
     def _curl_bitmex(self, path, query=None, postdict=None, timeout=None, verb=None, rethrow_errors=False,
                      max_retries=None):
@@ -239,4 +261,5 @@ class BitMEX(object):
         self.retries = 0
 
         return response.json()
+
 
