@@ -23,7 +23,7 @@ class BitMEX(object):
         self.base_url = base_url
         self.symbol = 'XBTUSD'
         self.postOnly = True
-        self.orderIDPrefix = 'System00_'
+        self.orderIDPrefix = 'System00d_'
         self.shouldWSAuth = True
 
         if (apiKey is None):
@@ -117,7 +117,6 @@ class BitMEX(object):
         }
         return self._curl_bitmex(path=endpoint, postdict=postdict, verb="POST")
 
-
     @authentication_required
     def amend_order(self, ordID, price=0, qty=0):
         """Amend existed order."""
@@ -158,7 +157,6 @@ class BitMEX(object):
                 order['execInst'] = 'ParticipateDoNotInitiate'
         return self._curl_bitmex(path='order/bulk', postdict={'orders': orders}, verb='POST')
 
-
     @authentication_required
     def cancel(self, orderID):
         """Cancel an existing order."""
@@ -178,7 +176,6 @@ class BitMEX(object):
         }
         return self._curl_bitmex(path=path, postdict=postdict, verb="DELETE")
 
-
     @authentication_required
     def withdraw(self, amount, fee, address):
         path = "user/requestWithdrawal"
@@ -189,7 +186,6 @@ class BitMEX(object):
             'address': address
         }
         return self._curl_bitmex(path=path, postdict=postdict, verb="POST", max_retries=0)
-
 
     @authentication_required
     def http_open_orders(self, isTerminated):
@@ -220,39 +216,12 @@ class BitMEX(object):
         }
         return self._curl_bitmex(path=path, postdict=postdict, verb='GET')
 
-    #각종 계약 정보 불러오는 함수, 실제로는 현재가 불러올때 쓸 예정
-    def instrument(self, count=25, reverse=True):
-        path = 'instrument'
-        postdict = {
-            'symbol' : self.symbol,
-            'count' : count,
-            'reverse' : reverse
-        }
-        return self._curl_bitmex(path=path, postdict=postdict, verb='GET')
-
     #나의 코인보유 정보 (어느side인지는 안나옴)
     def position(self):
         path = 'position'
         return self._curl_bitmex(path=path, verb='GET')
 
-    #OHLVC 열람 할 수 있음, startTime, endTime입력하여 시간에 맞춰서 열람 가능
-    def trade_bucketed(self, binSize, partial=False, count=100, reverse=True, startTime=None, endTime=None):
-        path = 'trade/bucketed'
-        postdict = {
-            'binSize' : binSize,
-            'partial' : partial,
-            'symbol' : self.symbol,
-            'count' : count,
-            'reverse' : reverse,
-            'startTime' : startTime,
-            'endTime' : endTime
-        }
-        return self._curl_bitmex(path=path, postdict=postdict, verb='GET')
-
-
-
-
-
+    #HTTP REQUEST URL 생성기
     def _curl_bitmex(self, path, query=None, postdict=None, timeout=None, verb=None, rethrow_errors=False,
                      max_retries=None):
         """Send a request to BitMEX Servers."""
