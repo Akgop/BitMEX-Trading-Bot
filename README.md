@@ -5,7 +5,7 @@
 Bitmex API를 사용하여 정해진 로직에 따라 트레이딩하는 프로그램
 
 Bitmex 에서 제공하는 오픈소스에 따라 해당 데이터를 DB에 기록함.
-[Bitmex API Connector - Python-Swaggerpy](https://github.com/BitMEX/api-connectors/tree/master/official-http/python-swaggerpy)
+[Bitmex API Connector - Python](https://github.com/BitMEX/api-connectors/tree/master/official-http/python-swaggerpy)
 - 현재 가격(Current Price)
 - 한달간의 OHLC -> Moving Average
 
